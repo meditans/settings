@@ -27,8 +27,6 @@ with lib;
 
     python
     
-    cabal2nix    
-
     xlibs.xmessage
   ];
   
