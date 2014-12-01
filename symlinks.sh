@@ -1,19 +1,29 @@
 #!/bin/sh
 
-# Eseguire questo script come amministratore!
+# Attenzione: Eseguire questo script come amministratore!
 
+########################################
+### Impostazioni iniziali
+########################################
 # Troviamo la posizione dello script
 scriptDir=$( cd "$( dirname "$0" )" && pwd )
 
-# Symlink per i file di configurazione globali
+# Troviamo la posizione dell'utente che invoca
+homeDir=$(getent passwd $SUDO_USER | cut -d: -f6)
+
+########################################
+### Configurazione globale nixOS
+########################################
 rm -r /etc/nixos
 ln -s "$scriptDir/nixos" /etc/nixos
 
-# Symlink per i file di configurazione di xmonad
-if [ -d "$HOME/.xmonad" ]
+########################################
+### Configurazione di xmonad
+########################################
+if [ -d "$homeDir/.xmonad" ]
 then
-   rm -r "$HOME/.xmonad"
+   rm -r "$homeDir/.xmonad"
 fi
 
-mkdir "$HOME/.xmonad"
-ln -s "$scriptDir/xmonad/xmonad.hs" "$HOME/.xmonad/xmonad.hs"
+mkdir "$homeDir/.xmonad"
+ln -s "$scriptDir/xmonad/xmonad.hs" "$homeDir/.xmonad/xmonad.hs"
