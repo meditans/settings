@@ -9,5 +9,5 @@ main = xmonad $ defaultConfig
   `additionalKeysP`
   [ ("M-e", spawn "emacs")
   , ("M-f", spawn "firefox")
-  , ("M-t", spawn "texmacs")
+  , ("M-c", spawn "conkeror")
   ]
