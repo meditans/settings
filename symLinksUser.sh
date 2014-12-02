@@ -28,3 +28,14 @@ then
 fi
 
 ln -s "$scriptDir/terminator" "$HOME/.config/terminator"
+
+########################################
+### Configurazione dei font
+########################################
+if [ -d "$HOME/.fonts" ]
+then
+   rm -r "$HOME/.fonts"
+fi
+
+ln -s "$scriptDir/fonts" "$HOME/.fonts"
+fc-cache -vf "$HOME/.fonts"
