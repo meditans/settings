@@ -17,5 +17,4 @@ then
 fi
 
 mkdir "$HOME/.xmonad"
-chown "$user" "$HOME/.xmonad" 
 ln -s "$scriptDir/xmonad/xmonad.hs" "$HOME/.xmonad/xmonad.hs"
