@@ -49,4 +49,5 @@ then
    curl -L http://install.ohmyz.sh | sh
 fi
 
+rm "$HOME/.zshrc"
 ln -s "$scriptDir/zsh/zshrc" "$HOME/.zshrc"
