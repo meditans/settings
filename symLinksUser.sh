@@ -18,3 +18,13 @@ fi
 
 mkdir "$HOME/.xmonad"
 ln -s "$scriptDir/xmonad/xmonad.hs" "$HOME/.xmonad/xmonad.hs"
+
+########################################
+### Configurazione di terminator
+########################################
+if [ ! -d "$HOME/.config" ]
+then
+   mkdir "$HOME/.config"
+fi
+
+ln -s "$scriptDir/terminator" "$HOME/.config/terminator"
