@@ -39,15 +39,3 @@ fi
 
 ln -s "$scriptDir/fonts" "$HOME/.fonts"
 fc-cache -vf "$HOME/.fonts"
-
-
-########################################
-### Configurazione di oh-my-zsh
-########################################
-if [ ! -d "$HOME/.oh-my-zsh" ]
-then
-   curl -L http://install.ohmyz.sh | sh
-fi
-
-rm "$HOME/.zshrc"
-ln -s "$scriptDir/zsh/zshrc" "$HOME/.zshrc"
