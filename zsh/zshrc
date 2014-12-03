@@ -1,4 +1,8 @@
-source "../antigen/antigen.zsh"
+scriptDir=$( cd "$( dirname "$0" )" && pwd )
+
+cd "$scriptDir"
+cd ..
+source "antigen/antigen.zsh"
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
