@@ -27,6 +27,9 @@ with lib;
 
     python
     
+    haskellPackages.cabalInstall
+    haskellPackages.cabal2nix
+
     xlibs.xmessage
   ];
   
