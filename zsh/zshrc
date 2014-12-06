@@ -26,3 +26,7 @@ alias -g L="| less"
 alias -s pdf=zathura
 
 alias e="emacsclient -t"
+
+function hub {
+    git clone "https://github.com/$1"
+}
