@@ -44,9 +44,11 @@ in
       applicativeNumbers = normalPackageS se "applicative-numbers";
       ty = normalPackageS se "ty";
       abcnotation = normalPackageS se "abcnotation";
-      #musicPitch = normalPackageS se "music-pitch";
+      musicPitch = normalPackageS se "music-pitch";
       dataInterval = normalPackageS se "data-interval";
       extendedReals = normalPackageS se "extended-reals";
+      lattices = normalPackageS se "lattices";
+      positive = normalPackageS se "positive";
     };
   });
 
