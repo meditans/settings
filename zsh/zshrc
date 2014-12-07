@@ -30,3 +30,7 @@ alias e="emacsclient -t"
 function hub {
     git clone "https://github.com/$1"
 }
+
+# Questo e' un export per cask
+
+export PATH="/home/carlo/.cask/bin:$PATH"
