@@ -27,6 +27,8 @@ alias -s pdf=zathura
 
 alias e="emacsclient -t"
 
+alias nixpaste="curl -F 'text=<-' http://nixpaste.noip.me"
+
 # Aliases for ghc-mod integration with ghcWithPackages
 NIX_GHC_VERSION=$(ghc --numeric-version)
 export NIX_GHC="$HOME/.nix-profile/bin/ghc"
