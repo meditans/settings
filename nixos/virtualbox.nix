@@ -8,7 +8,7 @@ with lib;
   boot.loader.grub.version = 2;
   boot.loader.grub.device = "/dev/sda";
 
-  services.virtualbox.enable = true;
+  services.virtualboxGuest.enable = true;
 
   # Add some more video drivers to give X11 a shot at working in VMware and QEMU.
   services.xserver.videoDrivers = mkOverride 40 [ "virtualbox" "vmware" "cirrus" "vesa" ];
