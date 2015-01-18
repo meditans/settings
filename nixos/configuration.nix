@@ -13,7 +13,10 @@ with lib;
     zathura gpicview
     wget curl
     terminator zsh
-    unrar unzip
+    unrar unzip zip
+    pdftk gnuplot
+    graphviz
+    lilypond
     gitAndTools.gitFull
     dejavu_fonts
 
