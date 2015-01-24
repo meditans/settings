@@ -5,10 +5,11 @@
   let
     self = super.pkgs;
     haskellPackagingDir = "/home/carlo/code/nix-packaging/";
+    ihaskellDir = "/home/carlo/code/nix-packaging/IHaskell/ihaskell-display/";
     locate = pkg: haskellPackagingDir + pkg + "/default.nix";
   in
   {
-    haskellDevEnv = self.haskellPackages.ghcWithPackages (p: with p; [
+    haskellDevEnv = self.haskellPackages.ghcWithPackagesOld (p: with p; [
       # Libraries 
       QuickCheck
       basicPrelude
@@ -23,12 +24,13 @@
       helios
       hi
       hspec
+      linear
       listExtras
       markdown
       mtl
-      musicSuite
-      positive
-      prettify
+      #musicSuite
+      #positive
+      #prettify
       random
       split
       text
@@ -40,6 +42,10 @@
       # tools
       cabalInstall
       ghcMod
+      ihaskell
+      ihaskellBasic
+      ihaskellCharts
+      ihaskellDiagrams
     ]);
 
     haskellPackages = super.haskellPackages.override {
@@ -51,6 +57,10 @@
         extendedReals = self.callPackage (locate "extended-reals") {};
         HCodecs = self.callPackage (locate "HCodecs") {};
         helios = self.callPackage "/home/carlo/code/haskell/helios/default.nix" {}; 
+        ihaskellCharts = self.callPackage (ihaskellDir + "ihaskell-charts/default.nix") {}; 
+        ihaskellBasic = self.callPackage (ihaskellDir + "ihaskell-basic/default.nix") {}; 
+        ihaskellDisplay = self.callPackage (locate "ihaskell-display") {};
+        ihaskellDiagrams = self.callPackage (locate "ihaskell-diagrams") {};
         lattices = self.callPackage (locate "lattices") {};
         lilypond = self.callPackage (locate "lilypond") {};
         monadplus = self.callPackage (locate "monadplus") {};
@@ -70,6 +80,18 @@
         romanNumerals = self.callPackage (locate "roman-numerals") {};
         ty = self.callPackage (locate "ty") {};
         typeUnary = self.callPackage (locate "type-unary") {};
+        
+        #hoogleLocal = self.haskellPackages.hoogleLocal.override {
+        #  packages = with self.haskellPackages; [
+        #    fgl
+        #    ];
+        #};              
+        #hoogleLocal = self.haskellPackages.hoogleLocal.override {packages = [
+        #  self.haskellPackages.fgl
+        #  ];
+        #};
+        
+
       };
     };
   };
