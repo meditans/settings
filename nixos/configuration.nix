@@ -51,7 +51,9 @@ with lib;
     };
 
   networking.firewall.allowPing = true;
+  networking.firewall.allowedTCPPorts = [ 8778 ];
+  networking.firewall.allowedUDPPorts = [ 8778 ];
 
   nixpkgs.config.allowUnfree = true;
-  nix.trustedBinaryCaches = [ "http://hydra.nixos.org" ];
+  nix.trustedBinaryCaches = [ "http://hydra.nixos.org" "http://hydra.cryp.to" ];
 }
