@@ -7,7 +7,7 @@ main = xmonad $ defaultConfig
   , borderWidth = 0
   }
   `additionalKeysP`
-  [ ("M-e", spawn "emacsclient -c")
+  [ ("M-e", spawn "emacs")
   , ("M-f", spawn "firefox")
   , ("M-c", spawn "conkeror")
   ]

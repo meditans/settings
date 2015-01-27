@@ -42,6 +42,8 @@
       # tools
       cabalInstall
       ghcMod
+      hlint
+      stylishHaskell
       ihaskell
       ihaskellBasic
       ihaskellCharts
